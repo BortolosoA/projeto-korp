@@ -1,0 +1,28 @@
+services:
+  nginx-proxy:
+    image: nginx
+    container_name: nginx-proxy
+    ports:
+      - "80:80"                  # O Nginx fica exposto para o mundo externo
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/
+    networks:
+      - korp-network
+    depends_on:
+      - http-server-projeto-korp
+  http-server-projeto-korp:
+    build:
+      context: .
+      dockerfile: Dockerfile 
+    container_name: http-server-projeto-korp
+    networks:
+      korp-network:
+        ipv4_address: 10.3.0.2
+    restart: unless-stopped
+
+networks:
+  korp-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.3.0.0/28
