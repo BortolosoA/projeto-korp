@@ -10,6 +10,9 @@ services:
       - korp-network
     depends_on:
       - http-server-projeto-korp
+      - nginx-exporter
+      - prometheus
+      - grafana
 
   nginx-exporter:
     image: nginx/nginx-prometheus-exporter:latest
@@ -18,8 +21,6 @@ services:
       - "--nginx.scrape-uri=http://nginx:8081/status"
     networks:
       - korp-network
-    depends_on:
-      - nginx-proxy
 
   prometheus:
     image: prom/prometheus:latest
@@ -28,10 +29,20 @@ services:
       - korp-network
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-    ports:
-      - "9090:9090"
     depends_on:
       - nginx-exporter
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    user: "0"
+    networks:
+      - korp-network
+    volumes:
+      - ./grafana/grafana-data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    depends_on:
+      - prometheus
 
   http-server-projeto-korp:
     build:
