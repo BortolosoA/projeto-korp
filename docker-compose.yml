@@ -17,6 +17,8 @@ services:
   nginx-exporter:
     image: nginx/nginx-prometheus-exporter:latest
     container_name: nginx-exporter
+    ports:
+      - "9113:9113"
     command:
       - "--nginx.scrape-uri=http://nginx-proxy:8081/status"
     networks:
@@ -40,6 +42,8 @@ services:
     user: "0"
     ports:
       - "3000:3000"
+    environment:
+      - GF_INSTALL_PLUGINS=gapit-htmlgraphics-panel
     networks:
       - korp-network
     volumes:
