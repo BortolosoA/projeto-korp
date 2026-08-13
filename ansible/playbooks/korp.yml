@@ -101,16 +101,7 @@
     # Compose
     # ---------------------------------------------------------
 
-    - name: Construir imagem da aplicação
-      community.docker.docker_image:
-        name: "{{ app_container }}"
-        build:
-          path: "{{ project_dir }}/app"
-          dockerfile: Dockerfile
-        source: build
-        force_source: true
-
-    - name: Subir stack Docker Compose
+    - name: Deploy do Docker Compose
       community.docker.docker_compose_v2:
         project_src: "{{ project_dir }}"
         state: present
