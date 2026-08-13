@@ -124,14 +124,14 @@
 
     - name: Aguardar NGINX ficar disponível
       ansible.builtin.wait_for:
-        host: 127.0.0.1
+        host: "{{ ansible_host }}"
         port: "{{ nginx_port }}"
         delay: 2
         timeout: 60
 
     - name: Testar API Projeto Korp
       ansible.builtin.uri:
-        url: "http://127.0.0.1:{{ nginx_port }}/projeto-korp"
+        url: "http://{{ ansible_host }}:{{ nginx_port }}/projeto-korp"
         method: GET
         return_content: true
         status_code: 200
