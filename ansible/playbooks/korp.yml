@@ -105,7 +105,7 @@
       community.docker.docker_compose_v2:
         project_src: "{{ project_dir }}"
         state: present
-        build: always
+        build: policy
         recreate: auto
         remove_orphans: true
 
