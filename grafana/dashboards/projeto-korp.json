@@ -1,6 +1,6 @@
 {
   "kind": "Dashboard",
-  "apiVersion": "dashboard.grafana.app/v1",
+  "apiVersion": "dashboard.grafana.app/v2",
   "metadata": {
     "name": "projeto-korp"
   },
