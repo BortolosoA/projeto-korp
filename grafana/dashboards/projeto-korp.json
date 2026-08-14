@@ -5,259 +5,728 @@
     "name": "projeto-korp"
   },
   "spec": {
-    "annotations": [
-      {
-        "kind": "AnnotationQuery",
-        "spec": {
-          "builtIn": true,
-          "enable": true,
-          "hide": true,
-          "iconColor": "rgba(0, 211, 255, 1)",
-          "name": "Annotations & Alerts",
-          "query": {
-            "datasource": {
-              "name": "-- Grafana --"
-            },
-            "group": "grafana",
-            "kind": "DataQuery",
-            "spec": {},
-            "version": "v0"
-          }
+  "annotations": [
+    {
+      "kind": "AnnotationQuery",
+      "spec": {
+        "builtIn": true,
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "query": {
+          "datasource": {
+            "name": "-- Grafana --"
+          },
+          "group": "grafana",
+          "kind": "DataQuery",
+          "spec": {},
+          "version": "v0"
         }
       }
-    ],
-    "cursorSync": "Off",
-    "editable": true,
-    "elements": {
-      "panel-3": {
-        "kind": "Panel",
-        "spec": {
-          "data": {
-            "kind": "QueryGroup",
-            "spec": {
-              "queries": [
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "Prometheus"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "builder",
-                        "expr": "up",
-                        "legendFormat": "__auto",
-                        "range": true
-                      },
-                      "version": "v0"
+    }
+  ],
+  "cursorSync": "Off",
+  "editable": true,
+  "elements": {
+    "panel-3": {
+      "kind": "Panel",
+      "spec": {
+        "data": {
+          "kind": "QueryGroup",
+          "spec": {
+            "queries": [
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "Prometheus"
                     },
-                    "refId": "A"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "Prometheus"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "code",
-                        "expr": "time() - process_start_time_seconds",
-                        "instant": false,
-                        "legendFormat": "__auto",
-                        "range": true
-                      },
-                      "version": "v0"
+                    "group": "prometheus",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "editorMode": "code",
+                      "expr": "time() - process_start_time_seconds",
+                      "instant": false,
+                      "legendFormat": "__auto",
+                      "range": true
                     },
-                    "refId": "B"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "Prometheus"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "builder",
-                        "expr": "http_requests_total",
-                        "instant": false,
-                        "legendFormat": "__auto",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "C"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "Prometheus"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "editorMode": "builder",
-                        "expr": "promhttp_metric_handler_requests_total{code=\"500\"}",
-                        "instant": false,
-                        "legendFormat": "__auto",
-                        "range": true
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "D"
-                  }
+                    "version": "v0"
+                  },
+                  "refId": "B"
                 }
-              ],
-              "queryOptions": {},
-              "transformations": []
+              },
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "Prometheus"
+                    },
+                    "group": "prometheus",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "editorMode": "builder",
+                      "expr": "http_requests_total",
+                      "instant": false,
+                      "legendFormat": "__auto",
+                      "range": true
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "C"
+                }
+              },
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "Prometheus"
+                    },
+                    "group": "prometheus",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "editorMode": "builder",
+                      "expr": "promhttp_metric_handler_requests_total{code=\"500\"}",
+                      "instant": false,
+                      "legendFormat": "__auto",
+                      "range": true
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "D"
+                }
+              }
+            ],
+            "queryOptions": {},
+            "transformations": []
+          }
+        },
+        "description": "",
+        "id": 3,
+        "links": [],
+        "title": "",
+        "transparent": true,
+        "vizConfig": {
+          "group": "gapit-htmlgraphics-panel",
+          "kind": "VizConfig",
+          "spec": {
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "options": {
+              "SVGBaseFix": true,
+              "add100Percentage": true,
+              "calcsMutation": "standard",
+              "centerAlignContent": true,
+              "codeData": "{\n  \"text\": \"Random text\"\n}",
+              "css": ".status-card { padding:0 18px; font-family:'Segoe UI', Arial, sans-serif; color:#fff; }\n.row { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #2a2d34; font-size:14px; }\n.row:last-child { border-bottom:none; }\n.k { color:#9aa0a6; }\n.v { font-weight:600; }\n.v.ok { color:#2ecc71; }\n.v.bad { color:#e74c3c; }",
+              "dynamicData": false,
+              "dynamicFieldDisplayValues": false,
+              "dynamicHtmlGraphics": false,
+              "dynamicProps": false,
+              "html": "<div class=\"status-card\">\n  <div class=\"row\">\n    <span class=\"k\">Scrape Time</span>\n    <span id=\"p3-uptime\" class=\"v\">--</span>\n  </div>\n  <div class=\"row\">\n    <span class=\"k\">Requisicoes</span>\n    <span id=\"p3-rate\" class=\"v\">--</span>\n  </div>\n  <div class=\"row\">\n    <span class=\"k\">Taxa de erro (5xx)</span>\n    <span id=\"p3-error\" class=\"v\">--</span>\n  </div>\n</div>",
+              "onInit": "",
+              "onInitOnResize": false,
+              "onRender": "function lastValue(refId) {\n  const serie = (data.series || []).find((s) => s.refId === refId);\n  if (!serie) return null;\n  const field = serie.fields[1];\n  const idx = field.values.length - 1;\n  return idx >= 0 ? field.values.get(idx) : null;\n}\n\nfunction firstValue() {\n  const serie = (data.series || []).find((s) => s.name && s.name.includes('process_start'));\n  if (!serie) return null;\n  const field = serie.fields.find(f => f.type === 'number') || serie.fields[1];\n  if (!field || !field.values || field.values.length === 0) return null;\n  const idx = field.values.length - 1;\n  return typeof field.values.get === 'function' \n    ? field.values.get(idx) \n    : field.values[idx];\n}\n\nconst uptimeStart = firstValue();\nconst rateVal = lastValue('C');\nconst errVal = lastValue('D');\n\nconst uptimeEl = htmlNode.getElementById('p3-uptime');\nconst rateEl = htmlNode.getElementById('p3-rate');\nconst errorEl = htmlNode.getElementById('p3-error');\n\n\nrateEl.textContent = rateVal != null ? rateVal : 'N/D';\n\nif (errVal != null) {\n  const pct = rateVal ? (errVal / rateVal) * 100 : 0;\n  errorEl.textContent = pct.toFixed(2) + ' %';\n  errorEl.className = pct > 5 ? 'v bad' : 'v ok';\n} else {\n  errorEl.textContent = 'N/D';\n}",
+              "overflow": "visible",
+              "panelupdateOnMount": true,
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull",
+                  "last",
+                  "firstNotNull",
+                  "first",
+                  "min",
+                  "max",
+                  "mean",
+                  "sum",
+                  "count",
+                  "range",
+                  "delta",
+                  "step",
+                  "diff",
+                  "logmin",
+                  "allIsZero",
+                  "allIsNull",
+                  "diffperc"
+                ]
+              },
+              "renderOnMount": true,
+              "rootCSS": "",
+              "useGrafanaScrollbar": true
             }
           },
-          "description": "",
-          "id": 3,
-          "links": [],
-          "title": "Aplication",
-          "vizConfig": {
-            "group": "gapit-htmlgraphics-panel",
-            "kind": "VizConfig",
-            "spec": {
-              "fieldConfig": {
-                "defaults": {
-                  "color": {
-                    "mode": "thresholds"
-                  },
-                  "thresholds": {
-                    "mode": "absolute",
-                    "steps": [
-                      {
-                        "color": "green",
-                        "value": 0
-                      },
-                      {
-                        "color": "red",
-                        "value": 80
-                      }
-                    ]
-                  }
-                },
-                "overrides": []
-              },
-              "options": {
-                "SVGBaseFix": true,
-                "add100Percentage": true,
-                "calcsMutation": "standard",
-                "centerAlignContent": true,
-                "codeData": "{\n  \"text\": \"Random text\"\n}",
-                "css": ".status-card { padding:0 18px; font-family:'Segoe UI', Arial, sans-serif; color:#fff; }\n.row { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #2a2d34; font-size:14px; }\n.row:last-child { border-bottom:none; }\n.k { color:#9aa0a6; }\n.v { font-weight:600; }\n.v.ok { color:#2ecc71; }\n.v.bad { color:#e74c3c; }",
-                "dynamicData": false,
-                "dynamicFieldDisplayValues": false,
-                "dynamicHtmlGraphics": false,
-                "dynamicProps": false,
-                "html": "<div class=\"status-card\">\n  <div class=\"row\">\n    <span class=\"k\">Status</span>\n    <span id=\"p3-status\" class=\"v\">--</span>\n  </div>\n  <div class=\"row\">\n    <span class=\"k\">Scrape Time</span>\n    <span id=\"p3-uptime\" class=\"v\">--</span>\n  </div>\n  <div class=\"row\">\n    <span class=\"k\">Requisicoes</span>\n    <span id=\"p3-rate\" class=\"v\">--</span>\n  </div>\n  <div class=\"row\">\n    <span class=\"k\">Taxa de erro (5xx)</span>\n    <span id=\"p3-error\" class=\"v\">--</span>\n  </div>\n</div>",
-                "onInit": "",
-                "onInitOnResize": false,
-                "onRender": "function lastValue(refId) {\n  const serie = (data.series || []).find((s) => s.refId === refId);\n  if (!serie) return null;\n  const field = serie.fields[1];\n  const idx = field.values.length - 1;\n  return idx >= 0 ? field.values.get(idx) : null;\n}\n\nfunction firstValue() {\n  const serie = (data.series || []).find((s) => s.name && s.name.includes('process_start'));\n  if (!serie) return null;\n  const field = serie.fields.find(f => f.type === 'number') || serie.fields[1];\n  if (!field || !field.values || field.values.length === 0) return null;\n  const idx = field.values.length - 1;\n  return typeof field.values.get === 'function' \n    ? field.values.get(idx) \n    : field.values[idx];\n}\n\nconst upVal = lastValue('A');\nconst uptimeStart = firstValue();\nconst rateVal = lastValue('C');\nconst errVal = lastValue('D');\n\nconst statusEl = htmlNode.getElementById('p3-status');\nconst uptimeEl = htmlNode.getElementById('p3-uptime');\nconst rateEl = htmlNode.getElementById('p3-rate');\nconst errorEl = htmlNode.getElementById('p3-error');\n\nif (upVal === 1) {\n  statusEl.textContent = 'ONLINE';\n  statusEl.className = 'v ok';\n} else {\n  statusEl.textContent = 'OFFLINE';\n  statusEl.className = 'v bad';\n}\n\nif (uptimeStart != null && !isNaN(uptimeStart)) {\n  const startSeconds = Number(uptimeStart);\n  const seconds = Math.max(0, (Date.now() / 1000) - startSeconds);\n  const h = Math.floor(seconds / 3600);\n  const m = Math.floor((seconds % 3600) / 60);\n  const formattedM = m.toString().padStart(2, '0');\n  uptimeEl.textContent = `${h}h ${formattedM}min`;\n} else {\n  uptimeEl.textContent = 'N/D';\n}\nrateEl.textContent = rateVal != null ? rateVal : 'N/D';\n\nif (errVal != null) {\n  const pct = rateVal ? (errVal / rateVal) * 100 : 0;\n  errorEl.textContent = pct.toFixed(2) + ' %';\n  errorEl.className = pct > 5 ? 'v bad' : 'v ok';\n} else {\n  errorEl.textContent = 'N/D';\n}",
-                "overflow": "visible",
-                "panelupdateOnMount": true,
-                "reduceOptions": {
-                  "calcs": [
-                    "lastNotNull",
-                    "last",
-                    "firstNotNull",
-                    "first",
-                    "min",
-                    "max",
-                    "mean",
-                    "sum",
-                    "count",
-                    "range",
-                    "delta",
-                    "step",
-                    "diff",
-                    "logmin",
-                    "allIsZero",
-                    "allIsNull",
-                    "diffperc"
-                  ]
-                },
-                "renderOnMount": true,
-                "rootCSS": "",
-                "useGrafanaScrollbar": true
-              }
-            },
-            "version": "2.2.3"
-          }
+          "version": "2.2.3"
         }
       }
     },
+    "panel-4": {
+      "kind": "Panel",
+      "spec": {
+        "data": {
+          "kind": "QueryGroup",
+          "spec": {
+            "queries": [
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "prometheus"
+                    },
+                    "group": "prometheus",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "editorMode": "builder",
+                      "expr": "process_start_time_seconds",
+                      "instant": false,
+                      "legendFormat": "__auto",
+                      "range": true
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "start_time"
+                }
+              },
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "prometheus"
+                    },
+                    "group": "prometheus",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "editorMode": "builder",
+                      "expr": "go_goroutines",
+                      "instant": false,
+                      "legendFormat": "__auto",
+                      "range": true
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "go_goroutines"
+                }
+              },
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "prometheus"
+                    },
+                    "group": "prometheus",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "editorMode": "builder",
+                      "expr": "go_threads",
+                      "instant": false,
+                      "legendFormat": "__auto",
+                      "range": true
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "go_threads"
+                }
+              },
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "prometheus"
+                    },
+                    "group": "prometheus",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "editorMode": "builder",
+                      "expr": "process_resident_memory_bytes",
+                      "instant": false,
+                      "legendFormat": "__auto",
+                      "range": true
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "resident_memory"
+                }
+              },
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "prometheus"
+                    },
+                    "group": "prometheus",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "editorMode": "builder",
+                      "expr": "process_virtual_memory_bytes",
+                      "instant": false,
+                      "legendFormat": "__auto",
+                      "range": true
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "virtual_memory"
+                }
+              },
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "prometheus"
+                    },
+                    "group": "prometheus",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "editorMode": "builder",
+                      "expr": "process_cpu_seconds_total",
+                      "instant": false,
+                      "legendFormat": "__auto",
+                      "range": true
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "cpu_seconds"
+                }
+              },
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "prometheus"
+                    },
+                    "group": "prometheus",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "editorMode": "builder",
+                      "expr": "go_memstats_heap_alloc_bytes",
+                      "instant": false,
+                      "legendFormat": "__auto",
+                      "range": true
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "heap_alloc"
+                }
+              },
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "prometheus"
+                    },
+                    "group": "prometheus",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "editorMode": "builder",
+                      "expr": "go_memstats_heap_objects",
+                      "instant": false,
+                      "legendFormat": "__auto",
+                      "range": true
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "heap_objects"
+                }
+              },
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "prometheus"
+                    },
+                    "group": "prometheus",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "editorMode": "builder",
+                      "expr": "go_memstats_next_gc_bytes",
+                      "instant": false,
+                      "legendFormat": "__auto",
+                      "range": true
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "next_gc"
+                }
+              },
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "prometheus"
+                    },
+                    "group": "prometheus",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "editorMode": "code",
+                      "expr": "go_gc_duration_seconds_sum / go_gc_duration_seconds_count",
+                      "instant": false,
+                      "legendFormat": "__auto",
+                      "range": true
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "gc_avg_duration"
+                }
+              },
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "prometheus"
+                    },
+                    "group": "prometheus",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "editorMode": "builder",
+                      "expr": "process_open_fds",
+                      "instant": false,
+                      "legendFormat": "__auto",
+                      "range": true
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "open_fds"
+                }
+              },
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "prometheus"
+                    },
+                    "group": "prometheus",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "editorMode": "builder",
+                      "expr": "process_max_fds",
+                      "instant": false,
+                      "legendFormat": "__auto",
+                      "range": true
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "max_fds"
+                }
+              }
+            ],
+            "queryOptions": {},
+            "transformations": []
+          }
+        },
+        "description": "",
+        "id": 4,
+        "links": [],
+        "title": "",
+        "transparent": true,
+        "vizConfig": {
+          "group": "gapit-htmlgraphics-panel",
+          "kind": "VizConfig",
+          "spec": {
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "options": {
+              "SVGBaseFix": true,
+              "add100Percentage": true,
+              "calcsMutation": "standard",
+              "centerAlignContent": true,
+              "codeData": "{\n  \"text\": \"Random text\"\n}",
+              "css": ".dash-container {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));\n  gap: 5px;\n  width: 80%;\n  height: 100%;\n  padding: 4px;\n  box-sizing: border-box;\n  font-family: inherit;\n}\n\n.card {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  background: rgba(255,255,255,0.04);\n  border: 1px solid rgba(255,255,255,0.08);\n  border-radius: 10px;\n  padding: 8px;\n}\n\n.card.wide {\n  grid-column: 1 / -1;\n  background: rgba(87,148,242,0.12);\n  border-color: rgba(87,148,242,0.3);\n}\n\n.card-label {\n  font-size: 12px;\n  opacity: 0.65;\n  text-transform: uppercase;\n  letter-spacing: 0.03em;\n}\n\n.card-value {\n  font-size: 20px;\n  font-weight: 600;\n  margin-top: 2px;\n}",
+              "dynamicData": false,
+              "dynamicFieldDisplayValues": false,
+              "dynamicHtmlGraphics": false,
+              "dynamicProps": false,
+              "html": "<div class=\"dash-container\">\n\n  <div class=\"card wide\">\n    <div>\n      <div class=\"card-label\">Uptime</div>\n      <div class=\"card-value\" id=\"val-uptime\">--</div>\n    </div>\n  </div>\n\n  <div class=\"card\">\n    <div>\n      <div class=\"card-label\">Goroutines</div>\n      <div class=\"card-value\" id=\"val-goroutines\">--</div>\n    </div>\n  </div>\n\n  <div class=\"card\">\n    <div>\n      <div class=\"card-label\">OS Threads</div>\n      <div class=\"card-value\" id=\"val-threads\">--</div>\n    </div>\n  </div>\n\n  <div class=\"card\">\n    <div>\n      <div class=\"card-label\">Memória em Uso</div>\n      <div class=\"card-value\" id=\"val-resident\">--</div>\n    </div>\n  </div>\n\n  <div class=\"card\">\n    <div>\n      <div class=\"card-label\">Memória virtual</div>\n      <div class=\"card-value\" id=\"val-virtual\">--</div>\n    </div>\n  </div>\n\n  <div class=\"card\">\n    <div>\n      <div class=\"card-label\">Heap</div>\n      <div class=\"card-value\" id=\"val-heap\">--</div>\n    </div>\n  </div>\n\n  <div class=\"card\">\n    <div>\n      <div class=\"card-label\">Objetos no heap</div>\n      <div class=\"card-value\" id=\"val-heapobjects\">--</div>\n    </div>\n  </div>\n\n  <div class=\"card\">\n    <div>\n      <div class=\"card-label\">Próximo GC</div>\n      <div class=\"card-value\" id=\"val-nextgc\">--</div>\n    </div>\n  </div>\n\n  <div class=\"card\">\n    <div>\n      <div class=\"card-label\">GC médio</div>\n      <div class=\"card-value\" id=\"val-gc\">--</div>\n    </div>\n  </div>\n\n  <div class=\"card\">\n    <div>\n      <div class=\"card-label\">CPU total (s)</div>\n      <div class=\"card-value\" id=\"val-cpu\">--</div>\n    </div>\n  </div>\n\n  <div class=\"card\">\n    <div>\n      <div class=\"card-label\">File descriptors</div>\n      <div class=\"card-value\" id=\"val-fds\">--</div>\n    </div>\n  </div>\n</div>",
+              "onInit": "",
+              "onInitOnResize": false,
+              "onRender": "const getMetric = (name) => {\n  const series = htmlGraphics.data.series.find((s) => s.refId === name);\n  if (!series || !series.fields[1]) return null;\n  const last = series.fields[1].state?.calcs?.last;\n  return last == null ? null : last;\n};\n\nconst setVal = (id, text) => {\n  const el = htmlGraphics.htmlNode.querySelector(id);\n  if (el) el.textContent = text;\n};\n\nconst fmtBytes = (bytes) => {\n  if (bytes == null) return '--';\n  const units = ['B', 'KB', 'MB', 'GB', 'TB'];\n  let i = 0;\n  while (bytes >= 1024 && i < units.length - 1) {\n    bytes /= 1024;\n    i++;\n  }\n  return bytes.toFixed(2) + ' ' + units[i];\n};\n\nconst fmtUptime = (startTimeSeconds) => {\n  if (startTimeSeconds == null) return '--';\n  let diff = Math.floor(Date.now() / 1000 - startTimeSeconds);\n  if (diff < 0) diff = 0;\n  const d = Math.floor(diff / 86400);\n  const h = Math.floor((diff % 86400) / 3600);\n  const m = Math.floor((diff % 3600) / 60);\n  const s = diff % 60;\n  const parts = [];\n  if (d) parts.push(d + 'd');\n  if (h || d) parts.push(h + 'h');\n  if (m || h || d) parts.push(m + 'm');\n  parts.push(s + 's');\n  return parts.join(' ');\n};\n\n// Uptime\nsetVal('#val-uptime', fmtUptime(getMetric('start_time')));\n\n// Goroutines / Threads\nsetVal('#val-goroutines', getMetric('go_goroutines') ?? '--');\nsetVal('#val-threads', getMetric('go_threads') ?? '--');\n\n// Memória\nsetVal('#val-resident', fmtBytes(getMetric('resident_memory')));\nsetVal('#val-virtual', fmtBytes(getMetric('virtual_memory')));\nsetVal('#val-heap', fmtBytes(getMetric('heap_alloc')));\nsetVal('#val-heapobjects', getMetric('heap_objects') ?? '--');\nsetVal('#val-nextgc', fmtBytes(getMetric('next_gc')));\n\n// GC médio (já vem calculado da query gc_avg_duration, em segundos)\nconst gcAvg = getMetric('gc_avg_duration');\nsetVal('#val-gc', gcAvg == null ? '--' : (gcAvg * 1000).toFixed(2) + ' ms');\n\n// CPU\nconst cpu = getMetric('cpu_seconds');\nsetVal('#val-cpu', cpu == null ? '--' : cpu.toFixed(2) + ' s');\n\n// File descriptors\nconst openFds = getMetric('open_fds');\nconst maxFds = getMetric('max_fds');\nsetVal('#val-fds', openFds == null ? '--' : `${openFds} / ${maxFds ?? '?'}`);\n\n// HTTP\nsetVal('#val-http', getMetric('http_requests') ?? '--');\nsetVal('#val-scrapes', getMetric('scrape_requests') ?? '--');",
+              "overflow": "visible",
+              "panelupdateOnMount": true,
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull",
+                  "last",
+                  "firstNotNull",
+                  "first",
+                  "min",
+                  "max",
+                  "mean",
+                  "sum",
+                  "count",
+                  "range",
+                  "delta",
+                  "step",
+                  "diff",
+                  "logmin",
+                  "allIsZero",
+                  "allIsNull",
+                  "diffperc"
+                ]
+              },
+              "renderOnMount": true,
+              "rootCSS": "",
+              "useGrafanaScrollbar": true
+            }
+          },
+          "version": "2.2.3"
+        }
+      }
+    },
+    "panel-5": {
+      "kind": "Panel",
+      "spec": {
+        "data": {
+          "kind": "QueryGroup",
+          "spec": {
+            "queries": [
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "Prometheus"
+                    },
+                    "group": "prometheus",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "editorMode": "builder",
+                      "expr": "up",
+                      "legendFormat": "__auto",
+                      "range": true
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "A"
+                }
+              }
+            ],
+            "queryOptions": {},
+            "transformations": []
+          }
+        },
+        "description": "",
+        "id": 5,
+        "links": [],
+        "title": "Application",
+        "transparent": true,
+        "vizConfig": {
+          "group": "gapit-htmlgraphics-panel",
+          "kind": "VizConfig",
+          "spec": {
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "options": {
+              "SVGBaseFix": true,
+              "add100Percentage": true,
+              "calcsMutation": "standard",
+              "centerAlignContent": true,
+              "codeData": "{\n  \"text\": \"Random text\"\n}",
+              "css": ".wrap { display:flex; align-items:center; gap:16px; padding:0 16px; font-family: 'Segoe UI', Arial, sans-serif; }\n.dot { width:26px; height:26px; border-radius:50%; background:#666; box-shadow:0 0 12px rgba(0,0,0,0.4); transition: background 0.3s ease; }\n.dot.up { background:#2ecc71; box-shadow:0 0 14px #2ecc71; }\n.dot.down { background:#e74c3c; box-shadow:0 0 14px #e74c3c; }\n.label { font-size:20px; font-weight:600; color:#fff; }\n.sub { font-size:12px; color:#9aa0a6; margin-top:2px; }",
+              "dynamicData": false,
+              "dynamicFieldDisplayValues": false,
+              "dynamicHtmlGraphics": false,
+              "dynamicProps": false,
+              "html": "<div class=\"wrap\">\n  <div id=\"dot\" class=\"dot\"></div>\n  <div class=\"info\">\n    <div id=\"label\" class=\"label\">Verificando...</div>\n    <div id=\"sub\" class=\"sub\">Instancia: -</div>\n  </div>\n</div>",
+              "onInit": "",
+              "onInitOnResize": false,
+              "onRender": "const dot = htmlNode.getElementById('dot');\nconst label = htmlNode.getElementById('label');\nconst sub = htmlNode.getElementById('sub');\n\nif (!data.series || data.series.length === 0) {\n  label.textContent = 'Sem dados';\n  dot.className = 'dot';\n} else {\n  const serie = data.series[0];\n  const valueField = serie.fields[1];\n  const lastIndex = valueField.values.length - 1;\n  const value = valueField.values.get(lastIndex);\n  const instanceLabel = serie.fields[1].labels ? (serie.fields[1].labels.instance || serie.fields[1].labels.job || '-') : '-';\n\n  if (value === 1) {\n    dot.className = 'dot up';\n    label.textContent = 'ONLINE';\n  } else {\n    dot.className = 'dot down';\n    label.textContent = 'OFFLINE';\n  }\n  sub.textContent = 'Instancia: ' + instanceLabel;\n}",
+              "overflow": "visible",
+              "panelupdateOnMount": true,
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull",
+                  "last",
+                  "firstNotNull",
+                  "first",
+                  "min",
+                  "max",
+                  "mean",
+                  "sum",
+                  "count",
+                  "range",
+                  "delta",
+                  "step",
+                  "diff",
+                  "logmin",
+                  "allIsZero",
+                  "allIsNull",
+                  "diffperc"
+                ]
+              },
+              "renderOnMount": true,
+              "rootCSS": "",
+              "useGrafanaScrollbar": true
+            }
+          },
+          "version": "2.2.3"
+        }
+      }
+    }
+  },
+  "layout": {
+    "kind": "GridLayout",
+    "spec": {
+      "items": [
+        {
+          "kind": "GridLayoutItem",
+          "spec": {
+            "element": {
+              "kind": "ElementReference",
+              "name": "panel-5"
+            },
+            "height": 4,
+            "width": 10,
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "kind": "GridLayoutItem",
+          "spec": {
+            "element": {
+              "kind": "ElementReference",
+              "name": "panel-3"
+            },
+            "height": 4,
+            "width": 14,
+            "x": 10,
+            "y": 0
+          }
+        },
+        {
+          "kind": "GridLayoutItem",
+          "spec": {
+            "element": {
+              "kind": "ElementReference",
+              "name": "panel-4"
+            },
+            "height": 8,
+            "width": 24,
+            "x": 0,
+            "y": 4
+          }
+        }
+      ]
+    }
+  },
+  "links": [],
+  "liveNow": false,
+  "preferences": {
     "layout": {
       "kind": "GridLayout",
       "spec": {
-        "items": [
-          {
-            "kind": "GridLayoutItem",
-            "spec": {
-              "element": {
-                "kind": "ElementReference",
-                "name": "panel-3"
-              },
-              "height": 6,
-              "width": 10,
-              "x": 1,
-              "y": 0
-            }
-          }
-        ]
+        "items": []
       }
-    },
-    "links": [],
-    "liveNow": false,
-    "preferences": {
-      "layout": {
-        "kind": "GridLayout",
-        "spec": {
-          "items": []
-        }
-      }
-    },
-    "preload": false,
-    "tags": [],
-    "timeSettings": {
-      "autoRefresh": "",
-      "autoRefreshIntervals": [
-        "5s",
-        "10s",
-        "30s",
-        "1m",
-        "5m",
-        "15m",
-        "30m",
-        "1h",
-        "2h",
-        "1d"
-      ],
-      "fiscalYearStartMonth": 0,
-      "from": "now-6h",
-      "hideTimepicker": false,
-      "timezone": "browser",
-      "to": "now"
-    },
-    "title": "Projeto-Korp",
-    "variables": []
+    }
+  },
+  "preload": false,
+  "tags": [],
+  "timeSettings": {
+    "autoRefresh": "",
+    "autoRefreshIntervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "fiscalYearStartMonth": 0,
+    "from": "now-6h",
+    "hideTimepicker": false,
+    "timezone": "browser",
+    "to": "now"
+  },
+  "title": "Projeto-Korp2",
+  "variables": []
   }
 }
